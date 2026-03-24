@@ -14,8 +14,8 @@ const CONFIG = {
   KALENDAR_URL: "https://calendar.app.google/UAmLdMxEeTVpDtjz5",
 };
 
-// Výchozí heslo vzoru: "aibility2026"
-CONFIG.HESLO_HASH = "6350e1b2b64d2ec65d7bbae33b1bc9460b242429ce95a7ecc35586f1e37367c4";
+// Heslo je jen v SHA-256 (plaintext neukládejte do gitu). Pro nové heslo: sha256(heslo).
+CONFIG.HESLO_HASH = "40c41402f0f9b322ce68ec2a2d602cf8b662be8d1f5d1834f935f766ca9c6186";
 
 // ------------------------------------------------------------------
 // Ochrana heslem (JS brána)
