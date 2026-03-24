@@ -156,6 +156,16 @@
             color: var(--color-text-secondary);
             line-height: var(--leading-relaxed);
         }
+        .focus-notes {
+            list-style: disc;
+            margin: 0;
+            padding-left: 1.35rem;
+            font-size: var(--text-lg);
+            color: var(--color-text-secondary);
+            line-height: var(--leading-relaxed);
+        }
+        .focus-notes li { margin-bottom: var(--space-3); }
+        .focus-notes li:last-child { margin-bottom: 0; }
 
         /* ── Pricing ──────────────────────────────────────────── */
         .pricing-card {
@@ -508,11 +518,34 @@
             box-sizing: border-box;
         }
 
+        a.poptavka-email-link {
+            color: #5000AB;
+            font-weight: var(--font-semibold);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            word-break: break-all;
+        }
+        a.poptavka-email-link:hover {
+            color: #3d007d;
+        }
+
         /* ── Responsive hero headline ─────────────────────────── */
         @media (min-width: 768px) {
             .hero--mentoring .hero__title {
                 font-size: clamp(2rem, 4vw, 3rem);
             }
+        }
+
+        /* Horní lišta (logo + menu) zůstane u horního okraje při scrollování */
+        #header.header {
+            position: sticky;
+            top: 0;
+            z-index: 5000;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-padding-top: 6rem;
         }
     </style>
 </head>
@@ -558,6 +591,7 @@
                 <li><a href="#potreby" class="header__nav-item">Co řešíme</a></li>
                 <li><a href="#prubeh" class="header__nav-item">Průběh</a></li>
                 <li><a href="#nabidka" class="header__nav-item">Nabídka</a></li>
+                <li><a href="#po-objednavce" class="header__nav-item" aria-label="Co vás čeká na začátku">Začátek</a></li>
                 <li><a href="#mentorka" class="header__nav-item">Mentorka</a></li>
             </ul>
         </nav>
@@ -593,41 +627,24 @@
      ════════════════════════════════════════════════════════════════ -->
 <section class="section" id="potreby">
     <div class="container" style="max-width: 800px;">
-        <span class="section__eyebrow">Vaše situace</span>
-        <h2 class="section__title">Co řešíme a&nbsp;na co se zaměříme</h2>
+        <span class="section__eyebrow">Úvodem</span>
+        <h2 class="section__title">Co řešíme</h2>
 
-        <div class="need-card">
-            <!-- VZOR: 2–3 věty o situaci klientky → -->
-            <p>
-                [Popis situace klientky – kde se nachází, co ji brzdí, proč mentoring dává smysl. 2–3 věty, konkrétně a bez keců.]
-            </p>
+        <div class="need-card" style="margin-top: var(--space-8);">
+            <p style="margin: 0 0 var(--space-3) 0;"><strong>Aktuální situace</strong></p>
+            <ul class="focus-notes">
+                <li>[1 bod – co je teď, z čeho vycházíme]</li>
+                <li>[2 bod – volitelně]</li>
+                <li>[3 bod – volitelně]</li>
+            </ul>
         </div>
-
-        <div class="cards-grid cards-grid--3" style="margin-top: var(--space-8);">
-            <div class="feature-card">
-                <div class="feature-card__icon feature-card__icon--purple">
-                    <i class="iconoir-user-circle"></i>
-                </div>
-                <h3 class="feature-card__title">Kdo jste</h3>
-                <!-- VZOR: → -->
-                <p class="feature-card__description">[Profil klientky – role, obor, kontext.]</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-card__icon feature-card__icon--teal">
-                    <i class="iconoir-sparks"></i>
-                </div>
-                <h3 class="feature-card__title">Výchozí bod</h3>
-                <!-- VZOR: → -->
-                <p class="feature-card__description">[Úroveň znalostí a zkušeností s AI.]</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-card__icon feature-card__icon--pink">
-                    <i class="iconoir-target"></i>
-                </div>
-                <h3 class="feature-card__title">Cíl</h3>
-                <!-- VZOR: → -->
-                <p class="feature-card__description">[Co konkrétně chceme dosáhnout po mentoringu.]</p>
-            </div>
+        <div class="need-card" style="margin-top: var(--space-4);">
+            <p style="margin: 0 0 var(--space-3) 0;"><strong>Co chcete změnit nebo posunout</strong></p>
+            <ul class="focus-notes">
+                <li>[1 bod – oč jde / kam směřovat]</li>
+                <li>[2 bod – volitelně]</li>
+                <li>[3 bod – volitelně, např. forma setkání]</li>
+            </ul>
         </div>
     </div>
 </section>
@@ -638,37 +655,37 @@
 <section class="section" id="prubeh" style="background: var(--color-bg-secondary);">
     <div class="container" style="max-width: 800px;">
         <span class="section__eyebrow">Jak mentoring probíhá</span>
-        <h2 class="section__title">Co získáte na každé hodině</h2>
-        <p class="section__description">Mentoring je konzultace na míru – ukážu nástroje, dám doporučení, ale velká část je vaše vlastní práce a samostudium.</p>
+        <h2 class="section__title">Co vám AI mentoring přinese</h2>
 
         <div class="cards-grid cards-grid--2" style="margin-top: var(--space-8);">
             <div class="feature-card">
-                <div class="feature-card__icon feature-card__icon--purple">
-                    <i class="iconoir-search"></i>
+                <div class="feature-card__icon feature-card__icon--pink">
+                    <i class="iconoir-user-circle"></i>
                 </div>
-                <h3 class="feature-card__title">Zmapování a očekávání</h3>
-                <p class="feature-card__description">Na základě analýzy příležitostí a testu AI dovedností společně zjistíme, na co se nejvíc zaměřit. Na první hodině si nastavíme očekávání a směr.</p>
+                <h3 class="feature-card__title">Mentorka s vámi na každém kroku</h3>
+                <p class="feature-card__description">Mentoring není jen o nástrojích – mentorka rozumí vašemu kontextu a pomůže vám AI používat v práci smysluplně, ne jen obecně. Společně si ujasníte směr a priority, mezi setkáními víte, na čem pracovat dál, a když se někde zaseknete, nejste na řešení sami. Na hodinách dostanete konkrétní postřehy a doporučení přesně na situaci, kterou zrovna řešíte.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-card__icon feature-card__icon--teal">
                     <i class="iconoir-path-arrow"></i>
                 </div>
-                <h3 class="feature-card__title">Postupné kroky</h3>
-                <p class="feature-card__description">V dalších hodinách se vždy soustředíme na to, co právě řešíte – konkrétní úkoly, ne obecná teorie.</p>
+                <h3 class="feature-card__title">Stavíme na základech</h3>
+                <p class="feature-card__description">Každá hodina navazuje na tu předchozí. Rozvíjíme to, co jsme společně vytvořili – žádné opakování od začátku, jen další pokrok. Mezi setkáními můžete zkoušet věci v praxi a na další hodině na tom stavíme. Každá session tak přidává další vrstvu k tomu, co už drží směr, ne nový rozjezd od nuly.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-card__icon feature-card__icon--pink">
-                    <i class="iconoir-book-stack"></i>
+                <div class="feature-card__icon feature-card__icon--purple">
+                    <i class="iconoir-sparks"></i>
                 </div>
-                <h3 class="feature-card__title">Materiály a přepis</h3>
-                <p class="feature-card__description">Po každém setkání dostanete přepis a podklady, se kterými můžete dál pracovat ve svých nástrojích.</p>
+                <h3 class="feature-card__title">Aimee – vaše AI koučka</h3>
+                <p class="feature-card__description">Aimee bude po vaší boku po celou dobu mentoringu – dostupná <strong>24/7</strong>. Pomůže vám objevovat AI, budovat superschopnosti a nacházet ideální řešení ve vašem vlastním tempu.</p>
+                <p style="margin-top: var(--space-3);"><a href="https://aibility.cz/superpowers" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.3em; font-weight: 600; color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px;">Superschopnosti a Aimee&nbsp;→</a></p>
             </div>
             <div class="feature-card">
                 <div class="feature-card__icon feature-card__icon--yellow">
                     <i class="iconoir-journal-page"></i>
                 </div>
-                <h3 class="feature-card__title">Vaše vlastní stránka</h3>
-                <p class="feature-card__description">K mentoringu patří jednoduchá webová stránka jen pro vás – shrnutí probíraného, tipy na nástroje a materiály, vše na jednom místě.</p>
+                <h3 class="feature-card__title">Materiály, nástroje a vaše stránka</h3>
+                <p class="feature-card__description">Po každém setkání dostanete přepis a podklady. Součástí jsou tipy na osvědčené nástroje – co opravdu funguje mentorce a v AI-first týmu Aibility, včetně ukázek jak je využít. Vše přehledně na vaší vlastní stránce.</p>
             </div>
         </div>
     </div>
@@ -697,19 +714,15 @@
                 </li>
                 <li>
                     <i class="iconoir-check-circle"></i>
-                    <span><strong>Test AI dovedností</strong> (hodnota 489&nbsp;Kč) – váš profil a doporučení</span>
+                    <span><strong>Test AI dovedností</strong> – váš profil a doporučení</span>
                 </li>
                 <li>
                     <i class="iconoir-check-circle"></i>
-                    <span class="pricing-list__text"><strong>Aimee</strong> – AI koučka k&nbsp;dispozici po dobu aktivního mentoringu. <a href="https://aibility.cz/superpowers" target="_blank" rel="noopener">Superschopnosti a&nbsp;Aimee&nbsp;→</a></span>
+                    <span><strong>AI koučka Aimee</strong> – dostupná 24/7 po celou dobu mentoringu</span>
                 </li>
                 <li>
                     <i class="iconoir-check-circle"></i>
                     <span>Přepis setkání, shrnutí, vaše stránka s&nbsp;materiály a tipy</span>
-                </li>
-                <li>
-                    <i class="iconoir-check-circle"></i>
-                    <span>Pravidelná setkání podle zvoleného počtu hodin</span>
                 </li>
             </ul>
 
@@ -765,8 +778,9 @@
                         <i class="iconoir-copy btn__icon" style="margin-right: 4px;"></i>
                         Kopírovat text poptávky do schránky
                     </button>
-                    <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-top: var(--space-3); text-align: center;">
-                        Zkopírujte text a pošlete e-mailem na <a href="mailto:petra.kvetova-psenicna@aibility.cz">petra.kvetova-psenicna@aibility.cz</a>
+                    <p style="font-size: var(--text-sm); color: var(--color-text-secondary); margin-top: var(--space-3); text-align: center; line-height: var(--leading-relaxed);">
+                        Zkopírujte text a pošlete e-mailem <strong>Petře Květové Pšeničné</strong>:<br />
+                        <a class="poptavka-email-link" href="mailto:petra.kvetova-psenicna@aibility.cz?subject=Objedn%C3%A1vka%20mentoringu" aria-label="E-mail Petry Květové Pšeničné (otevře výchozí poštovní program)">petra.kvetova-psenicna@aibility.cz</a>
                     </p>
                 </div>
 
@@ -778,10 +792,31 @@
                     <i class="iconoir-calendar btn__icon" style="margin-right: 4px;"></i>
                     Vybrat termín v kalendáři
                 </a>
-                <p style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-top: var(--space-3);">
-                    Termín si rezervujte po obdržení a uhrazení faktury.
+                <p style="font-size: var(--text-xs); color: var(--color-text-tertiary); margin-top: var(--space-3); max-width: 28rem; margin-left: auto; margin-right: auto; line-height: var(--leading-relaxed);">
+                    Termín první hodiny vyberte až po dokončení přípravy s Aimee (analýza příležitostí a test AI dovedností) – viz sekce níže.
                 </p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     PO OBJEDNÁVCE – kroky před první hodinou (po sekci Nabídka)
+     ════════════════════════════════════════════════════════════════ -->
+<section class="section" id="po-objednavce">
+    <div class="container" style="max-width: 800px;">
+        <span class="section__eyebrow">Po objednávce</span>
+        <h2 class="section__title">Co vás čeká na začátku</h2>
+        <p class="section__description">Krátká příprava před první hodinou nám ušetří čas – na setkání pak rovnou navážeme na vaše reálné potřeby a výsledky.</p>
+
+        <div class="need-card" style="margin-top: var(--space-8);">
+            <p style="margin: 0 0 var(--space-3) 0;"><strong>1. AI koučka Aimee</strong></p>
+            <p style="margin: 0;">Po uhrazení faktury vám pošleme přihlašovací údaje k Aimee – vaší osobní AI koučce od Aibility. Provede vás Analýzou AI příležitostí a Testem AI dovedností – vaším vlastním tempem, který vám nejlépe vyhovuje.</p>
+        </div>
+        <div class="need-card" style="margin-top: var(--space-4);">
+            <p style="margin: 0 0 var(--space-3) 0;"><strong>2. Rezervace první hodiny</strong></p>
+            <p style="margin: 0;">Jakmile máte analýzu i test za sebou, vyberte si termín první mentoringové hodiny.</p>
+        </div>
     </div>
 </section>
 
@@ -790,7 +825,7 @@
      ════════════════════════════════════════════════════════════════ -->
 <section class="section" id="mentorka" style="background: var(--color-bg-secondary);">
     <div class="container mentor-wrap">
-        <span class="section__eyebrow">TVOJE MENTORKA</span>
+        <span class="section__eyebrow">Vaše mentorka:</span>
         <div style="margin-top: var(--space-6); display: flex; flex-direction: column; align-items: center;">
             <img src="assets/images/mentor_petra.jpg" alt="Petra Květová Pšeničná" class="mentor-photo" />
             <h2 class="mentor-name" style="font-family: var(--font-family-headings);">Petra Květová Pšeničná</h2>
